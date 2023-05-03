@@ -223,7 +223,7 @@ def main(args):
 
     batch_number=0
     model.load_weights(
-        '/home/yasar/Documents/facenet-research/facenet-master/facenet_recognition/tutorial9/face_recognition_keras/face_VGG16/checkpoints500.h5')
+        '/face_recognition_keras/face_VGG16/checkpoints500.h5')
     accuracy=[]
     temp_accuracy=[]
     FAR = []
@@ -334,16 +334,16 @@ def parser_arguments(argv):
 
     parser.add_argument('--images_and_labels',type=str,
                         help='directory from where to get the training paths and ground truth',
-                        default='/home/yasar/Documents/CASIA_FACE/train.txt')
+                        default='/CASIA_FACE/train.txt')
 
     parser.add_argument('--test_images_labels',type=str,
                         help='direcotry where test iamges are stored ',
-                        default='/home/yasar/Documents/CASIA_FACE/test.txt')
+                        default='/CASIA_FACE/test.txt')
 
 
     parser.add_argument('--save_all_factors', type=str,
                         help='saving the training and validation loss of first three layers',
-                        default='/home/yasar/Documents/facenet-research/facenet-master/facenet_recognition/tutorial9/face_recognition_keras/face_VGG16/log-loss/metrics1')
+                        default='/face_recognition_keras/face_VGG16/log-loss/metrics1')
 
     """**************************************************************************************************************"""
 
