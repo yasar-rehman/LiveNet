@@ -237,9 +237,7 @@ def main(args):
 
     # compile the model (should be done *after* setting layers to non-trainable)
 
-    #model.load_weights(
-     #   '/home/yasar/Documents/facenet-research/facenet-master/facenet_recognition/tutorial5/log-loss/checkpoints/checkpoint' + str(
-      #      450) + '.h5')
+   
     lr = args.learning_rate
     optimizer = SGD(lr=lr,decay=1e-6, momentum=0.9)
 
@@ -305,12 +303,12 @@ def main(args):
         #learning rate schedule update
         if (batch_number == 200) | (batch_number == 400) | (batch_number == 450):
             model.save_weights(
-                '/home/yasar/Documents/facenet-research/facenet-master/facenet_recognition/tutorial5/log-loss/checkpoints/checkpoint' + str(batch_number) + '.h5')
+                '/log-loss/checkpoints/checkpoint' + str(batch_number) + '.h5')
 
             lr *= 0.1
 
         model.save_weights(
-            '/home/yasar/Documents/facenet-research/facenet-master/facenet_recognition/tutorial5/log-loss/checkpoints/checkpoint' + str(
+            '/log-loss/checkpoints/checkpoint' + str(
                 500) + '.h5')
 
 
@@ -324,7 +322,7 @@ def parser_arguments(argv):
 
     parser.add_argument('--images_and_labels',type=str,
                         help='directory from where to get the training paths and ground truth',
-                        default='/home/yasar/Documents/CASIA_FACE/train.txt')
+                        default='/CASIA_FACE/train.txt')
 
     parser.add_argument('--test_images_labels',type=str,
                         help='direcotry where test iamges are stored ',
@@ -332,12 +330,12 @@ def parser_arguments(argv):
 
     parser.add_argument('--save_tr_val_loss',type=str,
                         help='saving the training and validation loss of first three layers',
-                        default='/home/yasar/Documents/facenet-research/facenet-master/facenet_recognition/tutorial7/face_recognition_keras/face_VGG16/log-loss/log_loss')
+                        default='/face_recognition_keras/face_VGG16/log-loss/log_loss')
 
 
     parser.add_argument('--save_all_loss', type=str,
                         help='saving the training and validation loss of first three layers',
-                        default='/home/yaurehman2/Documents/Researchfirstyear/keras_research/face_recognition_keras/face_VGG16/log-loss/traing_loss')
+                        default='/face_recognition_keras/face_VGG16/log-loss/traing_loss')
 
     """**************************************************************************************************************"""
 
